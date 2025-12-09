@@ -11,7 +11,9 @@ namespace {
 struct SkeletonPass : public PassInfoMixin<SkeletonPass> {
     PreservedAnalyses run(Module &M, ModuleAnalysisManager &AM) {
         for (auto &F : M) {
-            errs() << "I saw a function called " << F.getName() << "!\n";
+            // errs() << "I saw a function called " << F.getName() << "!\n";
+            errs() << "Function body:\n" << F << "\n";
+            errs() << F << "\n";
         }
         return PreservedAnalyses::all();
     };
